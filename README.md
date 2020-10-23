@@ -4,6 +4,7 @@
 
 [![](https://img.shields.io/badge/docker-php_phalcon_swoole_redis-099cec?logo=docker)](https://hub.docker.com/r/twbworld/php-phalcon-swoole-redis)
 
+> PS: 该镜像下的php安装了phalcon/swoole/redis扩展,但并没安装redis程序
 
 ## 构建镜像
 例 :
@@ -37,5 +38,4 @@ services:
 | ---- | ---- |
 | php-fpm | 9000 |
 | swoole | 9501 |
-| redis | 6379 |
 
