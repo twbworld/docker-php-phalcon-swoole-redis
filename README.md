@@ -16,7 +16,7 @@ docker build -f dockerfile -t twbworld/php-phalcon-swoole-redis:latest .
 
 ### Command line
 ```shell
-docker run --rm -it --name php_container_name twbworld/php-phalcon-swoole-redis:latest
+docker run --rm -it --name php twbworld/php-phalcon-swoole-redis:latest
 ```
 
 ### docker-compose
@@ -26,7 +26,7 @@ version: "3.8"
 services:
     language:
         image: twbworld/php-phalcon-swoole-redis:latest
-        container_name: php_container_name
+        container_name: php
         environment:
             - TZ=Asia/Shanghai
         restart: always
