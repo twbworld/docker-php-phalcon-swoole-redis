@@ -1,13 +1,12 @@
-FROM php:7.3-fpm
+FROM php:5.6-fpm
 
 LABEL maintainer="twb<1174865138@qq.com><github.com/twbworld>"
 LABEL description="构建php-phalcon-swoole-redis镜像"
 
-ARG PHALCON_VERSION=4.1.0
-ARG SWOOLE_VERSION=4.5.2
-ARG REDIS_VERSION=5.3.1
-ARG PSR_VERSION=1.0.0
-ARG PHALCON_EXT_PATH=php7/64bits
+# ARG PHALCON_VERSION=3.4.5
+ARG SWOOLE_VERSION=1.10.5
+ARG REDIS_VERSION=2.2.8
+# ARG PHALCON_EXT_PATH=php5/64bits
 
 # 安装php扩展: https://www.jianshu.com/p/20fcca06e27e
 RUN set -xe \
@@ -36,27 +35,21 @@ RUN set -xe \
             sysvmsg \
             sysvsem \
             sysvshm \
-        && pecl install \
-            swoole-${SWOOLE_VERSION} \
-            redis-${REDIS_VERSION} \
-        && docker-php-ext-enable \
-            redis \
-            swoole \
-        # Download PSR, see https://github.com/jbboehr/php-psr
-        && curl -LO https://github.com/jbboehr/php-psr/archive/v${PSR_VERSION}.tar.gz \
-        && tar xzf ${PWD}/v${PSR_VERSION}.tar.gz \
-        # Download Phalcon
-        && curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz \
-        && tar xzf ${PWD}/v${PHALCON_VERSION}.tar.gz \
-        && docker-php-ext-install -j $(getconf _NPROCESSORS_ONLN) \
-            ${PWD}/php-psr-${PSR_VERSION} \
-            ${PWD}/cphalcon-${PHALCON_VERSION}/build/${PHALCON_EXT_PATH} \
-        # Remove all temp files
-        && rm -rf \
-            ${PWD}/v${PSR_VERSION}.tar.gz \
-            ${PWD}/php-psr-${PSR_VERSION} \
-            ${PWD}/v${PHALCON_VERSION}.tar.gz \
-            ${PWD}/cphalcon-${PHALCON_VERSION} \
+            && pecl install \
+                swoole-${SWOOLE_VERSION} \
+                redis-${REDIS_VERSION} \
+            && docker-php-ext-enable \
+                redis \
+                swoole \
+            # Download Phalcon
+            # && curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz \
+            # && tar xzf ${PWD}/v${PHALCON_VERSION}.tar.gz -C /usr/src/php/ext \
+            # && docker-php-ext-install -j $(getconf _NPROCESSORS_ONLN) \
+            #     ${PWD}/cphalcon-${PHALCON_VERSION}/build/${PHALCON_EXT_PATH} \
+            # Remove all temp files
+            # && rm -rf \
+            #     ${PWD}/v${PHALCON_VERSION}.tar.gz \
+            #     /usr/src/php/ext/cphalcon-${PHALCON_VERSION} \
         && php -m
 
 # USER 33
