@@ -9,7 +9,7 @@
 ## 构建镜像
 例 :
 ```shell
-docker build -f dockerfile -t twbworld/php-phalcon-swoole-redis:latest .
+docker build -f Dockerfile -t twbworld/php-phalcon-swoole-redis:latest .
 ```
 
 ## 使用

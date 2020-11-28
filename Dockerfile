@@ -3,7 +3,7 @@ FROM php:7.3-fpm
 LABEL maintainer="twb<1174865138@qq.com><github.com/twbworld>"
 LABEL description="构建php-phalcon-swoole-redis镜像"
 
-ARG PHALCON_VERSION=4.0.6
+ARG PHALCON_VERSION=4.1.0
 ARG SWOOLE_VERSION=4.5.2
 ARG REDIS_VERSION=5.3.1
 ARG PSR_VERSION=1.0.0
@@ -52,7 +52,7 @@ RUN set -xe \
             ${PWD}/php-psr-${PSR_VERSION} \
             ${PWD}/cphalcon-${PHALCON_VERSION}/build/${PHALCON_EXT_PATH} \
         # Remove all temp files
-        && rm -r \
+        && rm -rf \
             ${PWD}/v${PSR_VERSION}.tar.gz \
             ${PWD}/php-psr-${PSR_VERSION} \
             ${PWD}/v${PHALCON_VERSION}.tar.gz \
