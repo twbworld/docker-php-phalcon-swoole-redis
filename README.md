@@ -2,7 +2,7 @@
 **docker-php-phalcon-swoole-redis**
 ===========
 
-[![](https://img.shields.io/badge/docker-php_phalcon_swoole_redis-099cec?logo=docker)](https://hub.docker.com/r/twbworld/php-phalcon-swoole-redis)
+[![](https://img.shields.io/badge/docker-php%2d-phalcon%2d-swoole%2d-redis-099cec?logo=docker)](https://hub.docker.com/r/twbworld/php-phalcon-swoole-redis)
 
 > PS: 该镜像下的php安装了phalcon/swoole/redis扩展,但并没安装redis程序
 
