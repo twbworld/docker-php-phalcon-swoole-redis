@@ -2,7 +2,9 @@
 **docker-php-phalcon-swoole-redis**
 ===========
 
-[![](https://img.shields.io/badge/docker-php_phalcon_swoole_redis-099cec?logo=docker)](https://hub.docker.com/r/twbworld/php-phalcon-swoole-redis)
+[![](https://img.shields.io/badge/docker-php%2d-phalcon%2d-swoole%2d-redis-099cec?logo=docker)](https://hub.docker.com/r/twbworld/php-phalcon-swoole-redis)
+[![](https://img.shields.io/github/license/twbworld/docker-php-phalcon-swoole-redis)](https://github.com/twbworld/docker-php-phalcon-swoole-redis/blob/php-5.6/LICENSE)
+[![](https://github.com/twbworld/docker-php-phalcon-swoole-redis/workflows/ci/badge.svg?branch=php-5.6)](https://github.com/twbworld/docker-php-phalcon-swoole-redis/actions)
 
 > PS: 该镜像下的php安装了phalcon/swoole/redis扩展,但并没安装redis程序
 
