@@ -2,21 +2,22 @@
 **docker-php-phalcon-swoole-redis**
 ===========
 
-[![](https://img.shields.io/badge/docker-php_phalcon_swoole_redis-099cec?logo=docker)](https://hub.docker.com/r/twbworld/php-phalcon-swoole-redis)
+[![](https://img.shields.io/badge/docker-php%2d-phalcon%2d-swoole%2d-redis-099cec?logo=docker)](https://hub.docker.com/r/twbworld/php-phalcon-swoole-redis)
+[![](https://img.shields.io/github/license/twbworld/docker-php-phalcon-swoole-redis)](https://github.com/twbworld/docker-php-phalcon-swoole-redis/blob/php-5.6/LICENSE)
+[![](https://github.com/twbworld/docker-php-phalcon-swoole-redis/workflows/ci/badge.svg?branch=php-5.6)](https://github.com/twbworld/docker-php-phalcon-swoole-redis/actions)
 
 > PS: 该镜像下的php安装了phalcon/swoole/redis扩展,但并没安装redis程序
 
+
 ## 构建镜像
-例 :
-```shell
-docker build -f Dockerfile -t twbworld/php-phalcon-swoole-redis:latest .
-```
+
+> 使用了Github-Actions构建并发布Docker容器, 配置文件 `.github/workflows/ci.yml`
 
 ## 使用
 
 ### Command line
 ```shell
-docker run --rm -it --name php twbworld/php-phalcon-swoole-redis:latest
+docker run --rm -it --name php ghcr.io/twbworld/php-phalcon-swoole-redis:php5.6
 ```
 
 ### docker-compose
@@ -25,7 +26,7 @@ docker run --rm -it --name php twbworld/php-phalcon-swoole-redis:latest
 version: "3.8"
 services:
     language:
-        image: twbworld/php-phalcon-swoole-redis:latest
+        image: ghcr.io/twbworld/php-phalcon-swoole-redis:php5.6
         container_name: php
         environment:
             - TZ=Asia/Shanghai
